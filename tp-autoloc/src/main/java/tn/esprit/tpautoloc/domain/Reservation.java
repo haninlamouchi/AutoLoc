@@ -26,4 +26,10 @@ public class Reservation {
 
     @Enumerated(EnumType.STRING)
     private StatutReservation statut;
+    @ManyToOne
+    Client client;
+    @ManyToOne
+    Vehicule vehicule;
+    @OneToOne(fetch = FetchType.LAZY)
+    private Contrat contrat;
 }
